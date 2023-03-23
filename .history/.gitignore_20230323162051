@@ -1,0 +1,8 @@
+.idea
+.vscode
+saved
+log
+log_tensorboard
+datatset
+denoising-ml.xlsx
+**/__pycache__

@@ -1,0 +1,53 @@
+#General Hyper Parameters:
+gpu_id: 0
+use_gpu: True
+seed: 42
+
+neg_sampling: ~
+#Training Hyper Parameters:
+epochs: 300
+train_batch_size: 256
+#train_batch_size: 512
+learner: adam
+#learning_rate: 1e-3
+#neg_sampling: None
+#neg_sampling: {'popularity': 1}
+eval_step: 1
+stopping_step: 10
+clip_grad_norm: {'max_norm': 5.0, 'norm_type': 2}
+#weight_decay: 1e-4
+
+# scheduler
+scheduler: False
+step_size: 5
+gamma: 0.1
+
+#Evaluation Hyper Parameters:
+eval_args:
+  group_by: user
+  order: TO
+  split: {'LS': 'valid_and_test'}
+  mode: 'full'
+
+repeatable: True
+metrics: ['Recall', 'MRR', 'NDCG', 'Hit', 'Precision']
+#metrics: ['Hit', 'NDCG']
+
+topk: [10]
+#valid_metric: MRR@10
+valid_metric: NDCG@10
+#valid_metric: MRR@10
+valid_metric_bigger: True
+eval_batch_size: 256
+metric_decimal_place: 4
+
+num_layers: 1
+dropout_prob: 0.3
+loss_type: 'CE'
+initializer_range: 0.02
+step: 1
+
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+BEHAVIOR_ID_FIELD: behavior_type

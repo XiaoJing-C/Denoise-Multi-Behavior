@@ -1,0 +1,13 @@
+.idea
+.vscode
+venv
+saved
+log
+log_tensorboard
+dataset/ml-1m
+dataset/rec15
+dataset/tmall
+dataset/ub
+dataset/__pycache__
+denoising-ml.xlsx
+**/__pycache__
